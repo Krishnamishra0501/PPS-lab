@@ -1,0 +1,8 @@
+import string
+
+
+def remove(s):
+	mod = s.translate(str.maketrans('','',string.punctuation))
+	return mod
+s = input()
+print(remove(s))
