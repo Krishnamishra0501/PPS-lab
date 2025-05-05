@@ -1,0 +1,11 @@
+def sumofd(num):
+	tot = 0
+
+	while num > 0:
+		tot += num % 10
+		num //= 10
+
+	return tot
+
+num = int(input('num: '))
+print(f'sum: {sumofd(num)}')
