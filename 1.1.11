@@ -1,0 +1,33 @@
+def isyr(y):
+	return(y % 4 == 0 and y % 100 != 0) or(y % 400 == 0)
+
+def daysmonth(y,m):
+	if m in {1,3,5,7,8,10,12}:
+		return 31
+	elif m in {4,6,9,11}:
+		return 30
+	elif m == 2:
+		return 29 if isyr(y) else 28
+	return 0
+
+y = int(input("year: "))
+m = int(input("month: "))
+day = int(input("day: "))
+
+max = daysmonth(y,m)
+
+if max == 0 or day < 1 or day > max:
+	print("invalid")
+else:
+	print("valid")
+	if day < max:
+		day +=1
+	else:
+		day = 1
+		if m < 12:
+			m +=1
+		else:
+			m = 1
+			y+=1
+
+	print(f"incremented date: {y}-{m:02d}-{day:02d}")
