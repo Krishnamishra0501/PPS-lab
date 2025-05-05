@@ -1,0 +1,9 @@
+def Sumof(n):
+	tot =0
+	while n > 0:
+		tot += n % 10
+		n //= 10
+	return tot
+ n = int(input())
+
+print(Sumof(n))
