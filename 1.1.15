@@ -1,0 +1,36 @@
+def matmult(a, b):
+	rows_a = len(a)
+	cols_a = len(a[0])
+	rows_b = len(b)
+	cols_b = len(b[0])
+
+	if cols_a != rows_b:
+		print('Cannot multiply the two matrices. Incorrect dimensions.')
+		return
+	c =[[0 for row in range(cols_b)] for col in range(rows_a)]
+	for i in range(rows_a):
+		for j in range(cols_b):
+			for k in range(cols_a):
+				c[i][j] +=a[i][k] *b[k][j]
+	return c
+
+def readmatrix(name = ''):
+	if(name!=""):
+		print('Enter values for',name)
+	m = int(input('Number of rows, m = '))
+	n = int(input('Number of columns, n = '))
+	matrix = []
+	for i in range(0,m):
+		matrix+=[0]
+	for i in range(0,m):
+		matrix[i]=[0] * n
+	for i in range(0,m):
+		for j in range(0,n):
+			print('Entry in row:',i+1,'column:',j+1)
+			matrix[i][j] = int(input())
+	return matrix
+matrixa = readmatrix('matrix - A')
+matrixb = readmatrix('matrix - B')
+print("Matrix - A =", matrixa)
+print("Matrix - B =", matrixb)
+print("Matrix - A * Matrix- B =", matmult(matrixa, matrixb))
