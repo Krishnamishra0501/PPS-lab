@@ -1,0 +1,6 @@
+def rs(s):
+	return s[::-1]
+
+string = input()
+rs= rs(string)
+print(rs)
