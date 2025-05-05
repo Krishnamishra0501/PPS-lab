@@ -1,0 +1,31 @@
+class Complex ():
+
+# write your code...
+	def __init__(self):
+		self.real = 0
+		self.imag = 0
+	def initComplex(self,label):
+		print(f"complex number {label}")
+		self.real = int(input("Real Part: "))
+		self.imag = int(input("Imaginary Part: "))
+	def display(self):
+		print(f"{self.real}+{self.imag}i")
+	def sum(self,c1,c2):
+		self.real = c1.real + c2.real
+		self.imag = c1.imag + c2.imag
+c1 = Complex()
+c2 = Complex()
+c3 = Complex()
+c1.initComplex(1)
+c1.display()
+c2.initComplex(2)
+c2.display()
+
+
+c3.sum(c1,c2)
+print('Sum:',end = " ")
+
+#
+
+#c3.sum(c1,c2)
+c3.display()
